@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Figures — Ember</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0a0a0a;
+      --muted: #666;
+      --blue: #0071e3;
+      --radius: 18px;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f7fa 100%);
+      color: var(--text);
+      overflow-x: hidden;
+      min-height: 100vh;
+      padding: 40px 20px 100px;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    }
+
+    .card iframe {
+      width: 100%;
+      height: 380px;
+      border: none;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .card-content p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      color: #777;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    /* Floating Home Button */
+    .btn-floating {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 32px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .btn-floating:hover {
+      transform: translateY(-3px);
+      background: #333;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Figures & System Diagrams</h1>
+
+  <div class="grid">
+    <div class="card">
+      <iframe src="Ember_FIG1.pdf#toolbar=0&view=FitH" title="Figure 1"></iframe>
+      <div class="card-content">
+        <h3>FIG 1 — Dual Sensor System</h3>
+        <p>Block diagram of Ember’s UV and computer vision sensor integration for real-time ignition recognition.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <iframe src="Ember_FIG2.pdf#toolbar=0&view=FitH" title="Figure 2"></iframe>
+      <div class="card-content">
+        <h3>FIG 2 — AI Inference Pathway</h3>
+        <p>Flow diagram illustrating the data pipeline from image capture to flame classification and alert logic.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <iframe src="Ember_FIG3.pdf#toolbar=0&view=FitH" title="Figure 3"></iframe>
+      <div class="card-content">
+        <h3>FIG 3 — Prototype Board Layout</h3>
+        <p>Electrical layout of the first functional prototype including UVTRON, camera interface, and control logic.</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="index.html" class="btn-floating">← Home</a>
+
+  <footer>
+    <p>© 2025 Cedaris Technologies LLC — “Ember” is a descriptive working name; no trademark claim is asserted.</p>
+  </footer>
+
+</body>
+</html>
