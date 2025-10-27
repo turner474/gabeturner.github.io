@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rolling Notes — Ember</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0a0a0a;
+      --muted: #666;
+      --blue: #0071e3;
+      --blue-light: #cce3ff;
+      --radius: 16px;
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      padding: 40px 20px 80px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+      border-radius: var(--radius);
+      background: #f8f9fa;
+      box-shadow: var(--shadow);
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: block;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 38px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+      margin: 40px auto;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #333;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Rolling Notes</h1>
+
+  <div class="content" id="markdown-content">
+    Loading notes...
+  </div>
+
+  <a href="index.html" class="btn">← Back to Home</a>
+
+  <footer>
+    <p>© 2025 Cedaris Technologies LLC — “Ember” is a descriptive working name; no trademark claim is asserted.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    fetch('notes.md')
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById('markdown-content').innerHTML = marked.parse(text);
+      })
+      .catch(err => {
+        document.getElementById('markdown-content').innerText = 'Error loading notes.';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
