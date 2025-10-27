@@ -75,6 +75,35 @@
       line-height: 1.6;
     }
 
+    /* Patent Section */
+    .patent {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 40px 30px;
+      background: #f8f9fa;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .patent h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .patent p {
+      font-size: 1.05rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .patent small {
+      display: block;
+      color: #888;
+      margin-top: 8px;
+    }
+
     footer {
       text-align: center;
       padding: 50px 20px;
@@ -116,27 +145,35 @@
     <div class="card">
       <iframe src="Ember_FIG1.pdf#toolbar=0&view=FitH" title="Figure 1"></iframe>
       <div class="card-content">
-        <h3>FIG 1 — Dual Sensor System</h3>
-        <p>Block diagram of Ember’s UV and computer vision sensor integration for real-time ignition recognition.</p>
+        <h3>FIG 1 — Sketches</h3>
+        <p>Housing, features and sensor layout.</p>
       </div>
     </div>
 
     <div class="card">
       <iframe src="Ember_FIG2.pdf#toolbar=0&view=FitH" title="Figure 2"></iframe>
       <div class="card-content">
-        <h3>FIG 2 — AI Inference Pathway</h3>
-        <p>Flow diagram illustrating the data pipeline from image capture to flame classification and alert logic.</p>
+        <h3>FIG 2 — System Block Diagram</h3>
+        <p>Flow diagram illustrating the data pipeline and alert logic.</p>
       </div>
     </div>
 
     <div class="card">
       <iframe src="Ember_FIG3.pdf#toolbar=0&view=FitH" title="Figure 3"></iframe>
       <div class="card-content">
-        <h3>FIG 3 — Prototype Board Layout</h3>
-        <p>Electrical layout of the first functional prototype including UVTRON, camera interface, and control logic.</p>
+        <h3>FIG 3 — Control Flow</h3>
+        <p>Wake interrupt logic & alert flow.</p>
       </div>
     </div>
   </div>
+
+  <!-- New Provisional Patent Section -->
+  <section class="patent">
+    <h2>Provisional Patent</h2>
+    <p>Filed under U.S. Provisional Patent Application No. <strong>63/905,434</strong><br>
+    “Intelligent Dual-Sensor Fire Detection and Early-Warning System”</p>
+    <small>Filed October 2025</small>
+  </section>
 
   <a href="index.html" class="btn-floating">← Home</a>
 
