@@ -11,18 +11,19 @@
       --text: #0a0a0a;
       --muted: #666;
       --blue: #0071e3;
-      --blue-light: #cce3ff;
       --radius: 16px;
       --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
-      padding: 40px 20px 80px;
+      padding: 40px 20px 100px;
+      scroll-behavior: smooth;
     }
 
     h1 {
@@ -41,23 +42,25 @@
       line-height: 1.7;
     }
 
-    .btn {
-      display: block;
+    /* Floating Home Button */
+    .btn-floating {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
       background: #000;
       color: #fff;
       border: none;
       border-radius: 999px;
-      padding: 14px 38px;
+      padding: 14px 32px;
       font-size: 1.05rem;
       font-weight: 600;
       cursor: pointer;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-      margin: 40px auto;
-      text-align: center;
       text-decoration: none;
+      z-index: 1000;
     }
 
-    .btn:hover {
+    .btn-floating:hover {
       transform: translateY(-3px);
       background: #333;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -68,6 +71,7 @@
       padding: 50px 20px;
       color: #777;
       font-size: 0.9rem;
+      margin-top: 60px;
     }
   </style>
 </head>
@@ -78,7 +82,8 @@
     Loading notes...
   </div>
 
-  <a href="index.html" class="btn">← Back to Home</a>
+  <!-- Floating Home Button -->
+  <a href="index.html" class="btn-floating">← Home</a>
 
   <footer>
     <p>© 2025 Cedaris Technologies LLC — “Ember” is a descriptive working name; no trademark claim is asserted.</p>
@@ -87,14 +92,9 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     fetch('notes.md')
-      .then(response => response.text())
-      .then(text => {
-        document.getElementById('markdown-content').innerHTML = marked.parse(text);
-      })
-      .catch(err => {
-        document.getElementById('markdown-content').innerText = 'Error loading notes.';
-        console.error(err);
-      });
+      .then(r => r.text())
+      .then(t => document.getElementById('markdown-content').innerHTML = marked.parse(t))
+      .catch(() => document.getElementById('markdown-content').innerText = 'Error loading notes.');
   </script>
 </body>
 </html>
