@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ember — Cedaris Technologies LLC</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0a0a0a;
+      --muted: #666;
+      --blue: #0071e3;
+      --blue-light: #cce3ff;
+      --radius: 16px;
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    header h1 {
+      font-size: clamp(2.3rem, 5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #000;
+    }
+
+    header p.tagline {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-top: 10px;
+      max-width: 600px;
+    }
+
+    header p.legal-note {
+      margin-top: 8px;
+      font-size: 0.7rem;
+      color: #999;
+    }
+
+    .progress-wrapper {
+      max-width: 850px;
+      margin: 40px auto 100px;
+      padding: 0 20px;
+    }
+
+    .progress-bar {
+      position: relative;
+      height: 12px;
+      background: var(--blue-light);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 25%;
+      background: var(--blue);
+      border-radius: 8px;
+      transition: width 0.5s ease;
+      margin-left: 0;
+    }
+
+    .progress-stages {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .progress-stages span {
+      position: relative;
+      flex: 1;
+      text-align: center;
+    }
+
+    .progress-stages span.active {
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    section {
+      max-width: 950px;
+      margin: 80px auto;
+      padding: 0 24px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #000;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: #222;
+      margin-bottom: 18px;
+      line-height: 1.8;
+    }
+
+    .video-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .video-box {
+      flex: 1 1 45%;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+      background: #000;
+    }
+
+    .video-box iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    @media (max-width: 768px) {
+      .video-box { flex: 1 1 100%; }
+    }
+
+    .cta {
+      background: #f8f9fa;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 50px 28px;
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    input[type="email"], textarea {
+      width: 100%;
+      max-width: 400px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .btn {
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 38px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #333;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      background: #f8f8f8;
+      color: #777;
+      border-top: 1px solid #eee;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Ember</h1>
+  <p class="tagline">An intelligent, dual-sensor fire detection system built for modern safety.</p>
+  <p class="legal-note">“Ember” is a working name used descriptively; no trademark claim is asserted.</p>
+</header>
+
+<section id="demo-video">
+  <h2>Demo Videos</h2>
+  <p>Early concepts demonstrations: ignition detection and CV recognition.</p>
+
+  <div class="video-grid">
+    <!-- First Drive video -->
+    <div class="video-box">
+      <iframe 
+        src="https://drive.google.com/file/d/1PJSxJ5yNiIyf0MlfR8eHKq8ZkgczPElG/preview"
+        allow="autoplay"
+        allowfullscreen
+        style="width:100%; height:100%; border:0; border-radius:16px;">
+      </iframe>
+    </div>
+
+    <!-- Second Drive video -->
+    <div class="video-box">
+      <iframe 
+        src="https://drive.google.com/file/d/10KQw_NTu-8KlJsr_gWH58jyrX92u0AU6/preview"
+        allow="autoplay"
+        allowfullscreen
+        style="width:100%; height:100%; border:0; border-radius:16px;">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<div class="progress-wrapper">
+  <div class="progress-bar">
+    <div class="progress-bar-fill"></div>
+  </div>
+  <div class="progress-stages">
+    <span>Proof of Concept</span>
+    <span class="active">Parts Ordered</span>
+    <span>Prototype v1</span>
+    <span>Prototype vₓ</span>
+    <span>Testing & Refinement → Product v1</span>
+  </div>
+</div>
+
+<main>
+  <section>
+    <h2>Problem</h2>
+    <p>Traditional smoke detectors react only after smoke appears, creating dangerous delays. Ember aims to detect ignition before smoke, minimizing response time and risk.</p>
+  </section>
+
+  <section>
+    <h2>Solution</h2>
+    <p>By merging solar-blind UV sensing with computer vision, Ember identifies flame signatures instantly—even in bright environments—offering a new standard of fire awareness.</p>
+  </section>
+
+  <section>
+    <h2>Technology</h2>
+    <p>Ember’s dual-sensor architecture fuses ultraviolet wake logic with onboard AI. It distinguishes dangerous ignition events from safe, supervised flames such as candles or stoves.</p>
+  </section>
+
+  <section>
+    <h2>Value Proposition</h2>
+    <p>Ember enables earlier detection, fewer false alarms, and superior reliability—all while consuming minimal power for extended operation.</p>
+  </section>
+
+  <section>
+    <h2>Market</h2>
+    <p>With over 340,000 home fires annually in the U.S., the global fire detection market is growing beyond $80 billion. Ember’s intelligent detection brings a modern solution to a century-old problem.</p>
+  </section>
+
+  <section>
+    <h2>Team</h2>
+    <p>Gabriel Turner | Founder & Lead Engineer<br>Purdue University — B.S. Artificial Intelligence.</p>
+  </section>
+
+  <section class="cta">
+    <h2>Join Mailing List</h2>
+    <form action="https://formspree.io/f/xanlynro" method="POST">
+      <input type="email" name="email" placeholder="Your email" required />
+      <button type="submit" class="btn">Join</button>
+    </form>
+
+    <h2>Contact</h2>
+    <form action="https://formspree.io/f/xzzkbzlj" method="POST">
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" placeholder="Your message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Cedaris Technologies LLC — “Ember” is a descriptive working name; no trademark claim is asserted.</p>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+</body>
+</html>
