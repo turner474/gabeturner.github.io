@@ -1,3 +1,15 @@
+## October 28, 2025
+
+* Studying perceptron and classification for exam tomorrow, got bored, decided to implement ML classification today!
+* Wanted to run it all on RPi, but Mediapipe isn't supported in env.
+* Anyways... Took two videos of myself, one with flame one without, from a camera on the RPi, through HTTP.
+* Spliced both videos into 2frames images, spent a while labeling said images for fire
+* Trained a YOLOv8 model on annotated images for 50 epochs 
+* Really pleased with model-given training data is so minimal... like 50 flame image highlights
+* Combined with mediapipe on my computer for human feature recognition
+* ...Boom, we have actual safe/unsafe flame classification... yay!
+* Took a video threw it on the website. Now I will study for my exam again!
+
 ## October 26, 2025
 
 * Got the website looking a bit better...
