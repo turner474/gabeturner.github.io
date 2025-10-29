@@ -143,10 +143,10 @@
     <!-- Rotating Image Carousel -->
     <div class="media-box">
       <div class="carousel">
-        <img src="Screenshot 2025-10-28 181346.png" class="active" alt="Flame Dataset 1">
-        <img src="Screenshot 2025-10-28 184315.png" alt="Flame Dataset 2">
-        <img src="Screenshot 2025-10-28 190929.png" alt="Flame Dataset 3">
-        <img src="Screenshot 2025-10-28 192117.png" alt="Flame Dataset 4">
+        <img src="image1.png" class="active" alt="Flame Dataset 1">
+        <img src="image2.png" alt="Flame Dataset 2">
+        <img src="image3.png" alt="Flame Dataset 3">
+        <img src="image4.png" alt="Flame Dataset 4">
       </div>
       <div class="caption">Training Proccess</div>
     </div>
@@ -220,12 +220,17 @@
       <button type="submit" class="btn">Join</button>
     </form>
 
-    <h2 style="margin-top:40px;">Contact</h2>
-    <form action="https://formspree.io/f/xzzkbzlj" method="POST">
-      <input type="email" name="email" placeholder="Your email" required style="width:100%;max-width:400px;padding:12px 16px;border-radius:8px;border:1px solid #ccc;font-size:1rem;outline:none;">
-      <textarea name="message" placeholder="Your message" required style="width:100%;max-width:400px;padding:12px 16px;border-radius:8px;border:1px solid #ccc;font-size:1rem;min-height:100px;resize:vertical;margin-top:10px;"></textarea>
-      <button type="submit" class="btn">Send</button>
-    </form>
+<h2 style="margin-top:40px;">Contact</h2>
+<form action="https://formspree.io/f/xzzkbzlj" method="POST" style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:20px;">
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;width:100%;max-width:650px;">
+    <input type="email" name="email" placeholder="Your email" required
+      style="flex:1 1 40%;min-width:250px;padding:12px 16px;border-radius:8px;border:1px solid #ccc;font-size:1rem;outline:none;">
+    <textarea name="message" placeholder="Your message" required
+      style="flex:1 1 55%;min-width:250px;padding:12px 16px;border-radius:8px;border:1px solid #ccc;font-size:1rem;min-height:100px;resize:vertical;"></textarea>
+  </div>
+  <button type="submit" class="btn">Send</button>
+</form>
+
   </section>
 </main>
 
