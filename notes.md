@@ -1,10 +1,19 @@
+## November 11, 2025
+
+* Had to take some time for more pressing things... exams and internships
+* Ebay seller cancelled order after 11 days of nothing... so that sets me behind a bit. 
+* Ordered new UV bulbs from seller in America so hopefully will arrive soon, driver board is on my desk just need bulbs
+* Ordered special board for CV-hope to migrate off the Pi to that, given its smaller more power efficient and will hopefully allow for battery prototype. Should be better for higher CV fps, however today im working on optimizing the model for the Pi still. 
+* Converting from yolo8 to onnx... then will play around with image size/quality in a virtual ubuntu enviorment because doing that through ssh on the pi is annoying.
+* The goal is that the bulbs will come soon, I can dial in the model and wake interrupt on the pi, and then migrate into the new board (Maix II) and have a 3D printed housing plus battery for BDM comp. demo in December. 
+
 ## October 28, 2025
 
 * Studying perceptron and classification for exam tomorrow, got bored, decided to implement ML classification today!
 * Wanted to run it all on RPi, but Mediapipe isn't supported in env.
 * Anyways... Took two videos of myself, one with flame one without, from a camera on the RPi, through HTTP.
 * Spliced both videos into 2frames images, spent a while labeling said images for fire
-* Trained a YOLOv8 model on annotated images for 50 epochs 
+* Trained a YOLOv8 model on annotated images for 50 epochs
 * Really pleased with model-given training data is so minimal... like 50 flame image highlights
 * Combined with mediapipe on my computer for human feature recognition
 * ...Boom, we have actual safe/unsafe flame classification... yay!
