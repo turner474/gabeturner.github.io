@@ -1,11 +1,26 @@
+## November 13, 2025
+
+* Still trying to get the model to work decent on the pi
+* Hope to finish that by today and can implement this laughably bad 'flame sensor' that maxes out at 2 feet.
+* At least can test out the wake interrupt logic
+* Think that part of model running so terribly slow is that it was headed w/ a window... which is neccassary for testing but not so much for use, so think ill dial headed on laptop then headless on pi with just text output after figuring out the fastest format
+
+
+
+## November 12, 2025
+
+* Still working on optimizing the model for RPi
+* Works great on my laptop through webcam, not so much on the pi... talking sub 2fps...
+* Playing around with different model formats and lite versions video compression etc... 
+
 ## November 11, 2025
 
 * Had to take some time for more pressing things... exams and internships
-* Ebay seller cancelled order after 11 days of nothing... so that sets me behind a bit. 
+* Ebay seller cancelled order after 11 days of nothing... so that sets me behind a bit.
 * Ordered new UV bulbs from seller in America so hopefully will arrive soon, driver board is on my desk just need bulbs
-* Ordered special board for CV-hope to migrate off the Pi to that, given its smaller more power efficient and will hopefully allow for battery prototype. Should be better for higher CV fps, however today im working on optimizing the model for the Pi still. 
+* Ordered special board for CV-hope to migrate off the Pi to that, given its smaller more power efficient and will hopefully allow for battery prototype. Should be better for higher CV fps, however today im working on optimizing the model for the Pi still.
 * Converting from yolo8 to onnx... then will play around with image size/quality in a virtual ubuntu enviorment because doing that through ssh on the pi is annoying.
-* The goal is that the bulbs will come soon, I can dial in the model and wake interrupt on the pi, and then migrate into the new board (Maix II) and have a 3D printed housing plus battery for BDM comp. demo in December. 
+* The goal is that the bulbs will come soon, I can dial in the model and wake interrupt on the pi, and then migrate into the new board (Maix II) and have a 3D printed housing plus battery for BDM comp. demo in December.
 
 ## October 28, 2025
 
